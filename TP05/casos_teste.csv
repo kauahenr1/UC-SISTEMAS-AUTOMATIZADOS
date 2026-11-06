@@ -1,0 +1,6 @@
+﻿ID;Etapa_inicial;Tempo_na_etapa_s;Transicao_esperada;Etapa_esperada;Etapa_obtida_na_analise;Situacao;Metodo
+S01;E0;7,9;Nenhuma;E0;E0;PASSA;Verificacao logica manual
+S02;E0;8,0;T0;E1;E1;PASSA;Verificacao logica manual
+S03;E1;9,9;Nenhuma;E1;E1;PASSA;Verificacao logica manual
+S04;E1;10,0;T1;E2;E2;PASSA;Verificacao logica manual
+S05;E2;3,0;T2;E0;E0;PASSA;Verificacao logica manual
