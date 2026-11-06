@@ -1,0 +1,10 @@
+caso,botao,bruto_alvo,esperado_botao,esperado_estado,obtido,situacao
+A1,liberado,0,0,NORMAL,,PENDENTE
+A2,pressionado,0,1,NORMAL,,PENDENTE
+A3,liberado,512,0,NORMAL,,PENDENTE
+A4,liberado,1023,0,PERIGO,,PENDENTE
+L1,liberado,715,0,NORMAL,,PENDENTE
+L2,liberado,717,0,ATENCAO,,PENDENTE
+L3,liberado,869,0,ATENCAO,,PENDENTE
+L4,liberado,870,0,PERIGO,,PENDENTE
+F1,liberado,-1,0,FALHA,,PENDENTE

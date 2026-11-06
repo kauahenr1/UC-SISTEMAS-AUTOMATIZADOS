@@ -1,0 +1,8 @@
+tag,endereco,direcao,natureza,funcao
+BTN,D2,Entrada,Digital discreta,Botao com INPUT_PULLUP
+POT,A0,Entrada,Analogica ADC 10 bits,Leitura bruta 0 a 1023
+DHT22,D4,Entrada,Digital codificada,Temperatura ambiente
+LED,D8,Saida,Digital discreta,Indicacao do botao
+PCT,Interno,Interna,Float,Percentual calculado
+TEMP_SIM,Interno,Interna,Float,Temperatura simulada 0 a 100 C
+ESTADO,Interno,Interna,Texto,Classificacao com prioridade a falha

@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "author": "TP03 - Sistemas Automatizados",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": -105, "left": -145, "attrs": { "color": "green" } },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": 260, "left": 280, "attrs": {} },
+    { "type": "wokwi-led", "id": "led", "top": -115, "left": 345, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -30, "left": 375, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-dht22", "id": "dht", "top": 125, "left": -170, "attrs": { "temperature": "25", "humidity": "50" } }
+  ],
+  "connections": [
+    ["btn:1.l", "uno:2", "green", []],
+    ["btn:2.l", "uno:GND.1", "black", []],
+    ["pot:VCC", "uno:5V", "red", []],
+    ["pot:GND", "uno:GND.2", "black", []],
+    ["pot:SIG", "uno:A0", "green", []],
+    ["uno:8", "led:A", "green", []],
+    ["led:C", "r1:1", "red", []],
+    ["r1:2", "uno:GND.3", "black", []],
+    ["dht:VCC", "uno:5V", "red", []],
+    ["dht:GND", "uno:GND.1", "black", []],
+    ["dht:SDA", "uno:4", "green", []]
+  ],
+  "dependencies": {}
+}
