@@ -1,0 +1,11 @@
+TP04 - Partida condicionada
+Expressao: M = S AND G AND NOT E
+
+|----[ S ]----[ G ]----[/ E ]----------------( M )----|
+
+S: partida solicitada
+G: protecao fechada
+E: emergencia acionada
+M: autorizacao do motor
+
+Representacao textual para documentacao; nao e arquivo nativo editavel do simulador.

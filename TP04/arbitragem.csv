@@ -1,0 +1,5 @@
+﻿Cenario,CA,CB,MA_anterior,MB_anterior,Politica,MA_esperado,MB_esperado
+Sem comando,0,0,0,0,Bloquear ambos,0,0
+Somente A,1,0,0,0,A autorizado,1,0
+Somente B,0,1,0,0,B autorizado,0,1
+Conflito,1,1,0,0,Bloquear ambos (politica proposta),0,0
