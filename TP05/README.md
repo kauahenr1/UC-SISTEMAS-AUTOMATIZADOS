@@ -26,7 +26,7 @@ Apenas uma cor deve estar ligada por etapa; as outras permanecem desligadas.
 Os tempos são medidos **desde a ativação da respectiva etapa**. O ciclo completo dura 21 s, desconsiderando atrasos de implementação.
 
 ## Arquivos
-- `semaforo.drawio`: diagrama-fonte editável no https://app.diagrams.net/
+- `semaforo.drawio`:[ diagrama-fonte editável no https://app.diagrams.net/](https://drive.google.com/file/d/1WcZ0vQdov84XNp-WdQOPUMyP53I4bpCS/view?usp=sharing)
 - `semaforo.png`: visualização de referência do diagrama; **não é evidência de teste executado**.
 - `casos_teste.csv`: roteiro de testes com resultados reais ainda não preenchidos.
 
