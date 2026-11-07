@@ -1,6 +1,0 @@
-﻿ID,Condicao_inicial,Acao,Esperado,Obtido,Situacao,Justificativa,Evidencia
-T01,MOTOR=0; STOP_OK=1; EMG_OK=1,START=1,MOTOR=1,MOTOR=1,PASSA,Partida energizou a bobina MOTOR,capturas/T01_partida.png
-T02,MOTOR=1; STOP_OK=1; EMG_OK=1,START=0,MOTOR=1,MOTOR=1,PASSA,Contato MOTOR manteve o selo,capturas/T02_selo.png
-T03,MOTOR=1; EMG_OK=1,STOP_OK=0; START=0,MOTOR=0,MOTOR=0,PASSA,STOP_OK interrompeu o circuito,capturas/T03_parada.png
-T04,MOTOR=1; STOP_OK=1; START=0,EMG_OK=0,MOTOR=0,MOTOR=0,PASSA,Emergencia interrompeu o circuito,capturas/T04_emergencia.png
-T05,MOTOR=0; STOP_OK=1; EMG_OK=0,START=1,MOTOR=0,MOTOR=0,PASSA,Partida bloqueada com emergencia acionada,capturas/T05_bloqueio_partida.png
