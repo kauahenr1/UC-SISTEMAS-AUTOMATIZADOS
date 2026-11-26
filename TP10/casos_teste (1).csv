@@ -1,0 +1,19 @@
+﻿ID,Estímulo,Esperado,Obtido,Conclusão,Método
+T01,"FC03; referência 40001; offset 0; escala 0,1 %",65.0,65.0,PASSOU,Modelo local Python; sem rede real
+T02,FC03; offset 99 inexistente,{'exception': 2},{'exception': 2},PASSOU,Modelo local Python; sem rede real
+T03,"Consumidor recebe 92,0 com qualidade Bad",None,None,PASSOU,Modelo local Python; sem rede real
+T04,Filtro fabrica/linha1/+/temperatura aplicado a três tópicos,['fabrica/linha1/tanque101/temperatura'],['fabrica/linha1/tanque101/temperatura'],PASSOU,Modelo local Python; sem rede real
+T05,Nova assinatura hmi depois de publicar estado retido,"[('fabrica/linha1/tanque101/estado', {'source': 'T-101/P101_RUN', 'ts': '2026-11-20T04:00:00Z', 'value': True, 'unit': '1', 'quality': 'Good'})]","[('fabrica/linha1/tanque101/estado', {'source': 'T-101/P101_RUN', 'ts': '2026-11-20T04:00:00Z', 'value': True, 'unit': '1', 'quality': 'Good'})]",PASSOU,Modelo local Python; sem rede real
+T06,Identidade hmi tenta publicar estado,NEGADO,NEGADO,PASSOU,Modelo local Python; sem rede real
+T07,Good permite consumo,22.5,22.5,PASSOU,Modelo local Python; sem rede real
+T08,TEMP_REAL em dois words ABCD,22.5,22.5,PASSOU,Modelo local Python; sem rede real
+T09,Filtro # inclui o nível pai,True,True,PASSOU,Modelo local Python; sem rede real
+T10,Filtro + exige um nível,False,False,PASSOU,Modelo local Python; sem rede real
+T11,Curinga na raiz não recebe $SYS,False,False,PASSOU,Modelo local Python; sem rede real
+T12,Filtro + casa nível vazio existente,True,True,PASSOU,Modelo local Python; sem rede real
+T13,Broker indisponível,INDISPONIVEL,INDISPONIVEL,PASSOU,Modelo local Python; sem rede real
+T14,Reinício sem persistência; nova assinatura,[],[],PASSOU,Modelo local Python; sem rede real
+T15,Republicação após reconectar,"[('fabrica/linha1/tanque101/estado', {'source': 'T-101/P101_RUN', 'ts': '2026-11-20T04:00:00Z', 'value': True, 'unit': '1', 'quality': 'Good'})]","[('fabrica/linha1/tanque101/estado', {'source': 'T-101/P101_RUN', 'ts': '2026-11-20T04:00:00Z', 'value': True, 'unit': '1', 'quality': 'Good'})]",PASSOU,Modelo local Python; sem rede real
+T16,Payload vazio com RETAIN remove estado,[],[],PASSOU,Modelo local Python; sem rede real
+T17,Contrato recusa retenção de evento de alarme,RETAIN_RECUSADO_PELO_CONTRATO,RETAIN_RECUSADO_PELO_CONTRATO,PASSOU,Modelo local Python; sem rede real
+T18,Consumidor deduplica event_id repetido,"['E1', 'E2']","['E1', 'E2']",PASSOU,Modelo local Python; sem rede real
