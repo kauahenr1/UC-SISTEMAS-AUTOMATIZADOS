@@ -1,0 +1,31 @@
+{
+  "fabrica/linha1/tanque101/temperatura": {
+    "source": "T-101/TEMP_REAL",
+    "ts": "2026-11-20T04:00:00Z",
+    "value": 22.5,
+    "unit": "degC",
+    "quality": "Good"
+  },
+  "fabrica/linha1/tanque101/nivel": {
+    "source": "T-101/LT101",
+    "ts": "2026-11-20T04:00:00Z",
+    "value": 65.0,
+    "unit": "%",
+    "quality": "Good"
+  },
+  "fabrica/linha1/tanque101/estado": {
+    "source": "T-101/P101_RUN",
+    "ts": "2026-11-20T04:00:00Z",
+    "value": true,
+    "unit": "1",
+    "quality": "Good"
+  },
+  "fabrica/linha1/tanque101/alarme": {
+    "source": "T-101/AL_HH",
+    "ts": "2026-11-20T04:00:00Z",
+    "value": true,
+    "unit": "1",
+    "quality": "Good",
+    "event_id": "T101-20261120-0001"
+  }
+}

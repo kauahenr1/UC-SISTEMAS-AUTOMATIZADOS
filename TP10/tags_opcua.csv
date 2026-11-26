@@ -1,0 +1,6 @@
+﻿NodeId,BrowseName,Tipo,Unidade,AccessLevel,Permissão por identidade,Descrição,Origem Modbus,Qualidade esperada,Timestamp
+ns=2;s=T101.P101_CMD,T101.P101_CMD,Boolean,1,CurrentRead|CurrentWrite,operador: R/W; demais: R,Pedido de partida; não é retorno,coil 00001; offset 0,Good; BadCommunicationError na perda,SourceTimestamp UTC da aquisição
+ns=2;s=T101.P101_RUN,T101.P101_RUN,Boolean,1,CurrentRead,todos os consumidores autorizados: R,Retorno físico da bomba,discrete input 10001; offset 0,Good; BadCommunicationError na perda,SourceTimestamp UTC da aquisição
+ns=2;s=T101.LT101,T101.LT101,Double,%,CurrentRead,todos os consumidores autorizados: R,"LT101_RAW escalonado por 0,1",input register 30001; offset 0,Good; BadOutOfRange se raw > 1000,SourceTimestamp UTC da aquisição
+ns=2;s=T101.SP_NIVEL,T101.SP_NIVEL,Double,%,CurrentRead|CurrentWrite,operador: R/W; demais: R,Setpoint de nível de 0 a 100 %,"holding 40001; offset 0; escala 0,1",Good; BadOutOfRange se fora da faixa,SourceTimestamp UTC da aquisição
+ns=2;s=T101.TEMP_REAL,T101.TEMP_REAL,Float,degC,CurrentRead,todos os consumidores autorizados: R,Temperatura IEEE754; dois words ABCD,holding 40002–40003; offsets 1–2,Good; BadCommunicationError na perda,SourceTimestamp UTC da aquisição

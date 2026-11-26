@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" version="24.7.17">
+  <diagram id="page0" name="TP10 - Integração do tanque T-101">
+    <mxGraphModel dx="1600" dy="1100" grid="1" page="1" pageWidth="1600" pageHeight="1100">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zone1" value="CONTROLE&lt;br&gt;Modbus legado: acesso exclusivo do gateway" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="40" y="75" width="480" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="legacy" value="T-101 / servidor Modbus&lt;br&gt;P101_CMD, P101_RUN, LT101_RAW&lt;br&gt;SP_NIVEL, TEMP_REAL" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="65" y="240" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zone2" value="INTEGRAÇÃO&lt;br&gt;Certificados, identidades e ACLs" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="565" y="75" width="460" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="gw" value="gateway-t101 / OPC UA&lt;br&gt;Normalização, qualidade e timestamp&lt;br&gt;Publisher: pub-t101" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="590" y="240" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="broker" value="Broker MQTT / TLS 8883&lt;br&gt;RETAIN: somente /estado&lt;br&gt;Sem comandos para o CLP" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="590" y="520" width="420" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="zone3" value="SERVIÇOS&lt;br&gt;HMI, histórico e manutenção" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="75" width="470" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="hmi" value="HMI&lt;br&gt;MQTT: /estado, QoS 1&lt;br&gt;OPC UA: leitura; operador R/W" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="240" width="420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="hist" value="Histórico&lt;br&gt;fabrica/linha1/#&lt;br&gt;QoS 1 máximo; registrar lacunas" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="500" width="420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="maint" value="Manutenção&lt;br&gt;MQTT: /alarme, QoS 1&lt;br&gt;Deduplicação por event_id" style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="1110" y="760" width="420" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="contract" value="Raiz MQTT: fabrica/linha1/tanque101 | /temperatura /nivel /estado /alarme&lt;br&gt;F1: Modbus TCP 502, FC01/02/03/04 e escrita FC05/06. F2: OPC UA 4840 SignAndEncrypt.&lt;br&gt;F3/F4: MQTT TLS 8883, temperatura/nivel Q0; estado/alarme Q1. RETAIN apenas /estado.&lt;br&gt;Payload: source, ts, value, unit, quality; alarme acrescenta event_id. ACL por identidade.&lt;br&gt;Fonte: Calvetti TP10 p.57–69. Modelo documental; não comprova rede real." style="whiteSpace=wrap;html=1;fontSize=15;fontFamily=Arial;fillColor=#edf3f7;strokeColor=#29485c;" vertex="1" parent="1">
+          <mxGeometry x="55" y="920" width="1490" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="edge0" value="F1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="legacy" target="gw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" value="F2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="gw" target="hmi">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="F3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="gw" target="broker">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" value="F4: /estado" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="broker" target="hmi">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="550" />
+              <mxPoint x="1050" y="295" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge4" value="F4" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="broker" target="hist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" value="F4: /alarme" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;fontSize=13;" edge="1" parent="1" source="broker" target="maint">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1050" y="610" />
+              <mxPoint x="1050" y="815" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
