@@ -2,8 +2,6 @@
 
 **Aluno: Kauã Henrique · RA: 824132179**
 
-Material de referência: versão de Denner Ferreira, utilizada em colaboração acadêmica.
-
 ## Entrega
 
 Tanque T-101 com nível, temperatura e bomba P-101. O legado fornece dados Modbus; o gateway normaliza nós OPC UA e publica indicadores MQTT. HMI, histórico e manutenção consomem os dados conforme suas permissões. Esta é a simulação estruturada sem comunicação real pedida na P10.
