@@ -1,0 +1,5 @@
+Topico,Sentido,Payload_JSON,QoS,Retained,Politica_e_Limite
+fabrica/celula11/estado,CLP/Gateway -> Broker/HMI,"{""modo"":""AUTO"",""etapa"":""STEP_T"",""safe"":true,""run"":true,""ts"":""2026-11-26T22:18:00Z""}",1,true,Estado atual retido para assinantes; somente leitura/supervisao
+fabrica/celula11/producao,CLP/Gateway -> Broker/MES,"{""pecas"":5,""ts"":""2026-11-26T22:18:00Z""}",1,false,Contagem por evento de ciclo concluido em B2
+fabrica/celula11/alarme,CLP/Gateway -> Broker/HMI,"{""codigo"":""TIMEOUT_AVANCO_B3"",""ativo"":true,""ts"":""2026-11-26T22:18:00Z""}",1,true,Alarme ativo retido com registro temporal
+fabrica/celula11/manutencao,CLP/Gateway -> Broker/CMMS,"{""tempo_ciclo_s"":3.8,""timeouts"":1,""ts"":""2026-11-26T22:18:00Z""}",0,false,Telemetria de diagnostico; nao substitui seguranca local

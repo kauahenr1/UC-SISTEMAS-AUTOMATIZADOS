@@ -1,0 +1,15 @@
+Endereco,Tag,Classe,Sentido,Funcao,Estado_Seguro,Nota_Seguranca
+I0.0,E0_OK,DI,Campo -> CLP,Emergencia em estado normal,0,0 indica emergencia acionada
+I0.1,G1_OK,DI,Campo -> CLP,Protecao fisica fechada,0,0 indica porta/protecao aberta
+I0.2,B1,DI,Campo -> CLP,Deteccao de peca na estacao de separacao,0,Dispara transicao de transporte para avanco
+I0.3,B2,DI,Campo -> CLP,Fim de curso de cilindro recuado,Validar montagem,Confirma retorno completo de A1
+I0.4,B3,DI,Campo -> CLP,Fim de curso de cilindro avancado,0,Confirma avanco completo de A1
+Q0.0,M1,DO,CLP -> Campo,Acionamento do motor da esteira,0,"Ativo apenas com SAFE, RUN, AUTO e STEP_T"
+Q0.1,Y1,DO,CLP -> Campo,Solenoide de avanco do cilindro A1,0,Bloqueado se Y2 ativo
+Q0.2,Y2,DO,CLP -> Campo,Solenoide de retorno do cilindro A1,0,Bloqueado se Y1 ativo
+M0.0,SAFE,MEM,Interna CLP,Permissivo global de seguranca,0,E0_OK AND G1_OK AND NOT FAULT
+M0.1,RUN,MEM,Interna CLP,Selo de ciclo ativo com parada prioritaria,0,Exige novo START apos parada ou falha
+M0.2,STEP_T,MEM,Interna CLP,Etapa E1: Transporte de peca,0,Etapa exclusiva do ciclo
+M0.3,STEP_A,MEM,Interna CLP,Etapa E2: Avanco do atuador,0,Supervisionada por TON_A (3.0 s)
+M0.4,STEP_R,MEM,Interna CLP,Etapa E3: Retorno do atuador,0,Supervisionada por TON_R (3.0 s)
+M0.5,FAULT,MEM,Interna CLP,Etapa E4: Falha / alarme ativo,1,Limpeza via RESET; partida via START

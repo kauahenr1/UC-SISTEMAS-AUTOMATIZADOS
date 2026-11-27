@@ -1,0 +1,5 @@
+Gatilho,Camada_Origem,Topico_Destino,Sistema_Alvo,Comportamento
+Transicao de etapa ou SAFE,CLP,fabrica/celula11/estado,HMI,"Atualiza modo, etapa e estado seguro"
+Fim de curso B2 apos retorno,CLP,fabrica/celula11/producao,Historico / MES,Registra peca processada
+Estouro de TON_A/TON_R ou SAFE=0,CLP,fabrica/celula11/alarme,HMI / Alarme,Sinaliza falha e timestamp
+Ciclo e contagem de falhas,CLP,fabrica/celula11/manutencao,Manutencao,Acompanha tendencia e tempos

@@ -1,0 +1,7 @@
+ID_Teste,Req,Versao,Pre_Condicao,Estimulo,Esperado,Obtido,Evidencia,Status
+T01,R01/R02,v1.0.0,"E0_OK=1, G1_OK=1, AUTO=1, B2=1, B1=0",Pulso em START,STEP_T=1 e M1=1; HMI em transporte,"STEP_T=1, M1=1, Y1=0, Y2=0",evidencias/execucao_t01_t06.json#T01,APROVADO
+T02,R02/R03,v1.0.0,Ciclo ativo em STEP_T com M1=1,Ativar sensor B1,"M1=0, STEP_T=0, STEP_A=1, Y1=1","M1=0, STEP_T=0, STEP_A=1, Y1=1",evidencias/execucao_t01_t06.json#T02,APROVADO
+T03,R01/R04,v1.0.0,Avanco ativo em STEP_A com Y1=1,Abrir protecao G1 (G1_OK=0),"SAFE=0, RUN=0, Y1=0, M1=0","SAFE=0, RUN=0, Y1=0, M1=0",evidencias/execucao_t01_t06.json#T03,APROVADO
+T04,R05,v1.0.0,Em STEP_A com Y1=1 e B3=0,Aguardar 3.0 s sem chegar em B3,"FAULT=1, alarme TIMEOUT_AVANCO_B3, Y1=0","FAULT=1, alarme TIMEOUT_AVANCO_B3, Y1=0",evidencias/execucao_t01_t06.json#T04,APROVADO
+T05,R06,v1.0.0,Em FAULT=1 com condicoes seguras ok,Acionar RESET e depois acionar START,RESET limpa falha sem mover; START retoma ciclo,Sem movimento no RESET; ciclo retomado no START,evidencias/execucao_t01_t06.json#T05,APROVADO
+T06,R01/R05,v1.0.0,Operacao normal em modo automatico,Simular queda de rede/broker MQTT,Logica local segura mantida; alarme/qualidade na rede,Controle local intacto com rede_ativa=false,evidencias/execucao_t01_t06.json#T06,APROVADO

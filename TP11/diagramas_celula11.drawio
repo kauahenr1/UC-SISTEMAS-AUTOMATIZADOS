@@ -1,0 +1,72 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="GRAFCET_Celula11" id="grafcet-celula11">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="s0" value="Etapa 0: Repouso / Seguro (M1=0, Y1=0, Y2=0)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="90" y="50" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="Etapa 1 (STEP_T): Esteira em Movimento (M1=1)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="90" y="150" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="Etapa 2 (STEP_A): Avanco de A1 (Y1=1, TON_A=3s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90" y="250" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="Etapa 3 (STEP_R): Retorno de A1 (Y2=1, TON_R=3s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="90" y="350" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="s4" value="Etapa 4 (FAULT): Estado Seguro + Alarme (exige RESET e START)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="450" y="250" width="290" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="e01" style="endArrow=classic;html=1;" edge="1" parent="1" source="s0" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" style="endArrow=classic;html=1;" edge="1" parent="1" source="s1" target="s2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e23" style="endArrow=classic;html=1;" edge="1" parent="1" source="s2" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e24" style="endArrow=classic;html=1;strokeColor=#b85450;" edge="1" parent="1" source="s2" target="s4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Arquitetura_HMI_Rede" id="rede-celula11">
+    <mxGraphModel dx="1000" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="n1" value="Sensores e Atuadores (E0, G1, B1, B2, B3, M1, Y1, Y2)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="150" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n2" value="CLP (SAFE, RUN, STEP_T/A/R, FAULT, Timers)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="310" y="150" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n3" value="HMI Local (Modos, Etapas, Comandos, Alarmes)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="230" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="n4" value="Gateway / Broker MQTT (fabrica/celula11/...)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="600" y="150" width="230" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="n5" value="Historico / Diagnostico" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="600" y="260" width="230" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="l1" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="n1" target="n2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l2" style="endArrow=classic;startArrow=classic;html=1;" edge="1" parent="1" source="n3" target="n2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l3" style="endArrow=classic;html=1;" edge="1" parent="1" source="n2" target="n4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="l4" style="endArrow=classic;html=1;" edge="1" parent="1" source="n4" target="n5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
